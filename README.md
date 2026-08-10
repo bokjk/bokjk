@@ -22,13 +22,15 @@ Practical software를 만들며 자동화가 반복적인 일을 덜어 주는 �
   <img src="https://img.shields.io/badge/AI_%26_Automation-0b1020?style=for-the-badge&logo=robotframework&logoColor=ec4899" alt="AI and automation" />
 </div>
 
-## Selected builds
+## Pinned repositories
 
 <div align="center">
-  <a href="https://github.com/bokjk/opendataloader-pdf-mcp"><img width="49%" src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=bokjk&repo=opendataloader-pdf-mcp&theme=tokyonight&hide_border=true&bg_color=0b1020&title_color=22d3ee&icon_color=c084fc&text_color=d8e2ff" alt="opendataloader-pdf-mcp repository card" /></a>
-  <a href="https://github.com/bokjk/companyLagalSync"><img width="49%" src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=bokjk&repo=companyLagalSync&theme=tokyonight&hide_border=true&bg_color=0b1020&title_color=22d3ee&icon_color=c084fc&text_color=d8e2ff" alt="companyLagalSync repository card" /></a>
-  <a href="https://github.com/bokjk/toy_201907_ngx-multi-gauge"><img width="49%" src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=bokjk&repo=toy_201907_ngx-multi-gauge&theme=tokyonight&hide_border=true&bg_color=0b1020&title_color=22d3ee&icon_color=c084fc&text_color=d8e2ff" alt="toy_201907_ngx-multi-gauge repository card" /></a>
-  <a href="https://github.com/bokjk/javavo2tstype"><img width="49%" src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=bokjk&repo=javavo2tstype&theme=tokyonight&hide_border=true&bg_color=0b1020&title_color=22d3ee&icon_color=c084fc&text_color=d8e2ff" alt="javavo2tstype repository card" /></a>
+  <a href="https://github.com/bokjk/ai-token-monitor"><img width="49%" src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=bokjk&repo=ai-token-monitor&theme=tokyonight&hide_border=true&bg_color=0b1020&title_color=22d3ee&icon_color=c084fc&text_color=d8e2ff" alt="ai-token-monitor repository card" /></a>
+  <a href="https://github.com/bokjk/gajae-code"><img width="49%" src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=bokjk&repo=gajae-code&theme=tokyonight&hide_border=true&bg_color=0b1020&title_color=22d3ee&icon_color=c084fc&text_color=d8e2ff" alt="gajae-code repository card" /></a>
+  <a href="https://github.com/bokjk/mongle-releases"><img width="49%" src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=bokjk&repo=mongle-releases&theme=tokyonight&hide_border=true&bg_color=0b1020&title_color=22d3ee&icon_color=c084fc&text_color=d8e2ff" alt="mongle-releases repository card" /></a>
+  <a href="https://github.com/bokjk/opencodex"><img width="49%" src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=bokjk&repo=opencodex&theme=tokyonight&hide_border=true&bg_color=0b1020&title_color=22d3ee&icon_color=c084fc&text_color=d8e2ff" alt="opencodex repository card" /></a>
+  <a href="https://github.com/bokjk/orca"><img width="49%" src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=bokjk&repo=orca&theme=tokyonight&hide_border=true&bg_color=0b1020&title_color=22d3ee&icon_color=c084fc&text_color=d8e2ff" alt="orca repository card" /></a>
+  <a href="https://github.com/bokjk/ouroboros"><img width="49%" src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=bokjk&repo=ouroboros&theme=tokyonight&hide_border=true&bg_color=0b1020&title_color=22d3ee&icon_color=c084fc&text_color=d8e2ff" alt="ouroboros repository card" /></a>
 </div>
 
 ## Signal board
