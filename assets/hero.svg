@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img" aria-labelledby="title desc">
+  <title id="title">BOK.JK terminal identity</title>
+  <desc id="desc">A futuristic navy terminal panel for BOK.JK, AI-native builder, full-stack engineer, and automation enthusiast.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#060b1d"/>
+      <stop offset="0.55" stop-color="#0b1230"/>
+      <stop offset="1" stop-color="#160b2d"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#22d3ee" stop-opacity=".15"/>
+      <stop offset=".5" stop-color="#c084fc"/>
+      <stop offset="1" stop-color="#ec4899" stop-opacity=".15"/>
+    </linearGradient>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#d8e2ff" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#ec4899" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-80%" width="160%" height="260%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0V30" fill="none" stroke="#7dd3fc" stroke-opacity=".07" stroke-width="1"/>
+    </pattern>
+    <style>
+      .orbit { transform-origin: 715px 154px; animation: spin 18s linear infinite; }
+      .orbit-reverse { transform-origin: 715px 154px; animation: spin 12s linear infinite reverse; }
+      .star { animation: pulse 3.5s ease-in-out infinite; }
+      .star-two { animation: pulse 4.4s ease-in-out 1.2s infinite; }
+      .cursor { animation: blink 1s steps(2, start) infinite; }
+      .sweep { animation: scan 6s ease-in-out infinite; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      @keyframes pulse { 0%, 100% { opacity: .2; } 50% { opacity: 1; } }
+      @keyframes blink { 50% { opacity: 0; } }
+      @keyframes scan { 0%, 25% { transform: translateX(-260px); opacity: 0; } 38%, 62% { opacity: 1; } 75%, 100% { transform: translateX(950px); opacity: 0; } }
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { animation: none !important; }
+      }
+    </style>
+  </defs>
+
+  <rect width="900" height="320" rx="18" fill="url(#bg)"/>
+  <rect width="900" height="320" rx="18" fill="url(#grid)"/>
+  <rect x="1" y="1" width="898" height="318" rx="17" fill="none" stroke="url(#edge)" stroke-width="2"/>
+
+  <g fill="#d8e2ff">
+    <circle class="star" cx="72" cy="62" r="1.5"/><circle class="star-two" cx="163" cy="277" r="1"/>
+    <circle class="star-two" cx="307" cy="48" r="1.5"/><circle class="star" cx="431" cy="282" r="1"/>
+    <circle class="star" cx="574" cy="44" r="1"/><circle class="star-two" cx="842" cy="70" r="1.5"/>
+    <circle class="star" cx="841" cy="259" r="1"/>
+  </g>
+  <path class="sweep" d="M-220 36H1050" stroke="url(#sweep)" stroke-width="70" opacity=".35"/>
+
+  <g transform="translate(54 58)">
+    <rect width="476" height="204" rx="10" fill="#070d20" fill-opacity=".82" stroke="#22d3ee" stroke-opacity=".35"/>
+    <path d="M0 31H476" stroke="#22d3ee" stroke-opacity=".2"/>
+    <circle cx="19" cy="16" r="4" fill="#ec4899"/><circle cx="33" cy="16" r="4" fill="#c084fc"/><circle cx="47" cy="16" r="4" fill="#22d3ee"/>
+    <text x="68" y="20" fill="#94a3b8" font-family="monospace" font-size="11" letter-spacing="2">IDENTITY://BOKJK</text>
+    <text x="26" y="72" fill="#22d3ee" font-family="monospace" font-size="15">$ whoami</text>
+    <text x="26" y="112" fill="#f8fafc" font-family="monospace" font-size="39" font-weight="700" letter-spacing="5">BOK.JK</text>
+    <path d="M27 126H287" stroke="#c084fc" stroke-width="2" filter="url(#glow)"/>
+    <text x="26" y="155" fill="#cbd5e1" font-family="monospace" font-size="14" letter-spacing="1">AI-NATIVE BUILDER</text>
+    <text x="26" y="179" fill="#cbd5e1" font-family="monospace" font-size="14" letter-spacing="1">FULL-STACK ENGINEER</text>
+    <text x="26" y="203" fill="#ec4899" font-family="monospace" font-size="14" letter-spacing="1">AUTOMATION ENTHUSIAST<tspan class="cursor">_</tspan></text>
+  </g>
+
+  <g fill="none" stroke-linecap="round">
+    <circle class="orbit" cx="715" cy="154" r="100" stroke="#22d3ee" stroke-opacity=".32" stroke-width="1.4" stroke-dasharray="6 12"/>
+    <ellipse class="orbit-reverse" cx="715" cy="154" rx="136" ry="54" stroke="#c084fc" stroke-opacity=".32" stroke-width="1.4" stroke-dasharray="4 10"/>
+    <ellipse class="orbit" cx="715" cy="154" rx="58" ry="132" stroke="#ec4899" stroke-opacity=".2" stroke-width="1" stroke-dasharray="3 13"/>
+  </g>
+  <circle cx="715" cy="154" r="29" fill="#101b41" stroke="#22d3ee" stroke-width="2" filter="url(#glow)"/>
+  <path d="M703 154h24M715 142v24" stroke="#d8e2ff" stroke-width="2"/>
+  <circle class="orbit" cx="715" cy="54" r="4" fill="#22d3ee" filter="url(#glow)"/>
+  <circle class="orbit-reverse" cx="851" cy="154" r="4" fill="#c084fc" filter="url(#glow)"/>
+  <circle class="orbit" cx="715" cy="286" r="3" fill="#ec4899" filter="url(#glow)"/>
+
+  <text x="56" y="292" fill="#64748b" font-family="monospace" font-size="10" letter-spacing="2">SYSTEM ONLINE  •  BUILD / AUTOMATE / ITERATE</text>
+</svg>
