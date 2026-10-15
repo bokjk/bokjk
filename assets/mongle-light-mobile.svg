@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 210" role="img" aria-labelledby="title">
+<title id="title">01 · MONGLE — 일할 때도, 쉴 때도 함께.</title>
+<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#715127" stroke-opacity=".065"/></pattern></defs>
+<rect width="600" height="210" rx="18" fill="#f5f4fc"/>
+<rect width="600" height="210" rx="18" fill="url(#grid)"/>
+<path d="M30 1H570" stroke="#715127" stroke-opacity=".55"/>
+<text x="32" y="55" fill="#715127" font-family="monospace" font-size="22" letter-spacing="3">01 / MONGLE</text>
+<text x="32" y="130" fill="#171c32" font-family="'Segoe UI','Malgun Gothic',sans-serif" font-size="29" font-weight="700">일할 때도, 쉴 때도 함께.</text>
+<path d="M32 183H568" stroke="#715127" stroke-opacity=".18"/>
+<path d="M32 183H108" stroke="#715127" stroke-width="3"/>
+</svg>
