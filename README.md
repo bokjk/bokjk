@@ -15,7 +15,8 @@
 <h3>몽글</h3>
 <p><strong>코딩하는 당신 옆의 작은 동료.</strong></p>
 <p align="center">
-  <a href="https://github.com/bokjk/mongle-releases"><img src="assets/mongle-working.gif" width="130" alt="코딩 작업에 맞춰 일하는 몽글 캐릭터" /><img src="assets/mongle-happy.gif" width="130" alt="작업이 끝나면 기뻐하는 몽글 캐릭터" /></a>
+  <img src="assets/mongle-working.gif" width="45%" alt="코딩 작업에 맞춰 일하는 몽글 캐릭터" />
+  <img src="assets/mongle-happy.gif" width="45%" alt="작업이 끝나면 기뻐하는 몽글 캐릭터" />
 </p>
 <p>AI 코딩 에이전트가 일하면 함께 일하고, 끝나면 점프하며 알려주는 데스크톱 펫입니다.</p>
 <p><sub>작업 상태 반응 · 완료 알림 · 사용량 확인</sub></p>
@@ -54,10 +55,6 @@
 
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=bokjk&hide_border=true&background=0B1020&ring=EC4899&fire=C084FC&currStreakLabel=22D3EE&sideLabels=D8E2FF&dates=94A3B8&stroke=1E293B" width="70%" alt="GitHub 연속 기여 기록" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=bokjk&bg_color=0b1020&color=d8e2ff&line=22d3ee&point=ec4899&area=true&area_color=c084fc&hide_border=true" width="98%" alt="GitHub 기여 활동 그래프" />
 </p>
 
 <picture>
