@@ -1,11 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 210" role="img" aria-labelledby="title">
-<title id="title">01 · MONGLE — 일할 때도, 쉴 때도 함께.</title>
-<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#f2bc76" stroke-opacity=".065"/></pattern></defs>
-<rect width="600" height="210" rx="18" fill="#0d1424"/>
-<rect width="600" height="210" rx="18" fill="url(#grid)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 222" role="img" aria-labelledby="title">
+<title id="title">01 · Mongle — 작업 중엔 타닥타닥. 끝나면 폴짝.</title>
+<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#f2bc76" stroke-opacity=".065"/></pattern>
+<linearGradient id="trail"><stop stop-color="#f2bc76" stop-opacity="0"/><stop offset="1" stop-color="#f2bc76"/></linearGradient>
+<clipPath id="rail"><rect x="32" y="192" width="536" height="6" rx="3"/></clipPath>
+<style>.trail{animation:travel 7s ease-in-out infinite}.dot{animation:breathe 3s ease-in-out infinite}@keyframes travel{0%{transform:translateX(-140px)}100%{transform:translateX(600px)}}@keyframes breathe{50%{opacity:.35}}@media(prefers-reduced-motion:reduce){*{animation:none!important}.trail{display:none}}</style></defs>
+<rect width="600" height="222" rx="18" fill="#0d1424"/>
+<rect width="600" height="222" rx="18" fill="url(#grid)"/>
 <path d="M30 1H570" stroke="#f2bc76" stroke-opacity=".55"/>
-<text x="32" y="55" fill="#f2bc76" font-family="monospace" font-size="22" letter-spacing="3">01 / MONGLE</text>
-<text x="32" y="130" fill="#f0f2fc" font-family="'Segoe UI','Malgun Gothic',sans-serif" font-size="29" font-weight="700">일할 때도, 쉴 때도 함께.</text>
-<path d="M32 183H568" stroke="#f2bc76" stroke-opacity=".18"/>
-<path d="M32 183H108" stroke="#f2bc76" stroke-width="3"/>
+<text x="32" y="48" fill="#f2bc76" font-family="'Segoe UI','Malgun Gothic',sans-serif" font-size="25" letter-spacing="2">01 / Mongle</text>
+<circle class="dot" cx="560" cy="40" r="5" fill="#f2bc76"/>
+<text x="32" y="106" fill="#f0f2fc" font-family="'Segoe UI','Malgun Gothic',sans-serif" font-size="36" font-weight="700">작업 중엔 타닥타닥.<tspan x="32" dy="48">끝나면 폴짝.</tspan></text>
+<path d="M32 195H568" stroke="#f2bc76" stroke-opacity=".18"/>
+<path d="M32 195H108" stroke="#f2bc76" stroke-width="3"/>
+<g clip-path="url(#rail)"><rect class="trail" x="32" y="193" width="140" height="4" fill="url(#trail)"/></g>
 </svg>

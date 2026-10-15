@@ -4,26 +4,31 @@ const out = new URL('../assets/', import.meta.url);
 const font = "'Segoe UI','Malgun Gothic',sans-serif";
 function save(name, body) { writeFileSync(new URL(name, out), body); }
 const sections = [
-  ['mongle', '01', 'MONGLE', '일할 때도, 쉴 때도 함께.', '#f2bc76', '#715127'],
-  ['terminal', '02', 'MONGLE TERMINAL', '작업은 그대로. 어디서든, 이어서.', '#7ddcc8', '#236754'],
-  ['lab', '03', 'DEVELOPER LAB', '직접 쓰고, 고치고, 나눕니다.', '#c4a4ff', '#64469b'],
+  ['mongle', '01', 'Mongle', ['작업 중엔 타닥타닥.', '끝나면 폴짝.'], '#f2bc76', '#715127'],
+  ['terminal', '02', 'Mongle Terminal', ['흩어진 창은 모으고,', '하던 일은 이어서.'], '#7ddcc8', '#236754'],
+  ['lab', '03', '작업 노트', ['직접 쓰고, 고치고,', '다시 만들어 봅니다.'], '#c4a4ff', '#64469b'],
 ];
-for (const [slug, n, label, line, accent, lightAccent] of sections) {
+for (const [slug, n, label, lines, accent, lightAccent] of sections) {
   for (const theme of ['dark', 'light']) {
     for (const mobile of [false, true]) {
-      const w = mobile ? 600 : 960, h = mobile ? 210 : 164;
+      const w = mobile ? 600 : 960, h = mobile ? 222 : 164;
       const dark = theme === 'dark', bg = dark ? '#0d1424' : '#f5f4fc';
       const fg = dark ? '#f0f2fc' : '#171c32', c = dark ? accent : lightAccent;
       save(`${slug}-${theme}${mobile ? '-mobile' : ''}.svg`, `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title">
-<title id="title">${n} · ${label} — ${line}</title>
-<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="${c}" stroke-opacity=".065"/></pattern></defs>
+<title id="title">${n} · ${label} — ${lines.join(' ')}</title>
+<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="${c}" stroke-opacity=".065"/></pattern>
+<linearGradient id="trail"><stop stop-color="${c}" stop-opacity="0"/><stop offset="1" stop-color="${c}"/></linearGradient>
+<clipPath id="rail"><rect x="32" y="${h-30}" width="${w-64}" height="6" rx="3"/></clipPath>
+<style>.trail{animation:travel 7s ease-in-out infinite}.dot{animation:breathe 3s ease-in-out infinite}@keyframes travel{0%{transform:translateX(-140px)}100%{transform:translateX(${w}px)}}@keyframes breathe{50%{opacity:.35}}@media(prefers-reduced-motion:reduce){*{animation:none!important}.trail{display:none}}</style></defs>
 <rect width="${w}" height="${h}" rx="18" fill="${bg}"/>
 <rect width="${w}" height="${h}" rx="18" fill="url(#grid)"/>
 <path d="M30 1H${w-30}" stroke="${c}" stroke-opacity=".55"/>
-<text x="32" y="${mobile?55:49}" fill="${c}" font-family="monospace" font-size="${mobile?22:18}" letter-spacing="3">${n} / ${label}</text>
-<text x="32" y="${mobile?130:109}" fill="${fg}" font-family="${font}" font-size="${mobile?29:34}" font-weight="700">${line}</text>
+<text x="32" y="${mobile?48:49}" fill="${c}" font-family="${font}" font-size="${mobile?25:20}" letter-spacing="2">${n} / ${label}</text>
+<circle class="dot" cx="${w-40}" cy="${mobile?40:42}" r="5" fill="${c}"/>
+<text x="32" y="${mobile?106:109}" fill="${fg}" font-family="${font}" font-size="${mobile?36:34}" font-weight="700">${mobile?`${lines[0]}<tspan x="32" dy="48">${lines[1]}</tspan>`:lines.join(' ')}</text>
 <path d="M32 ${h-27}H${w-32}" stroke="${c}" stroke-opacity=".18"/>
 <path d="M32 ${h-27}H108" stroke="${c}" stroke-width="3"/>
+<g clip-path="url(#rail)"><rect class="trail" x="32" y="${h-29}" width="140" height="4" fill="url(#trail)"/></g>
 </svg>`);
     }
   }

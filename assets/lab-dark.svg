@@ -1,11 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 164" role="img" aria-labelledby="title">
-<title id="title">03 · DEVELOPER LAB — 직접 쓰고, 고치고, 나눕니다.</title>
-<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#c4a4ff" stroke-opacity=".065"/></pattern></defs>
+<title id="title">03 · 작업 노트 — 직접 쓰고, 고치고, 다시 만들어 봅니다.</title>
+<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#c4a4ff" stroke-opacity=".065"/></pattern>
+<linearGradient id="trail"><stop stop-color="#c4a4ff" stop-opacity="0"/><stop offset="1" stop-color="#c4a4ff"/></linearGradient>
+<clipPath id="rail"><rect x="32" y="134" width="896" height="6" rx="3"/></clipPath>
+<style>.trail{animation:travel 7s ease-in-out infinite}.dot{animation:breathe 3s ease-in-out infinite}@keyframes travel{0%{transform:translateX(-140px)}100%{transform:translateX(960px)}}@keyframes breathe{50%{opacity:.35}}@media(prefers-reduced-motion:reduce){*{animation:none!important}.trail{display:none}}</style></defs>
 <rect width="960" height="164" rx="18" fill="#0d1424"/>
 <rect width="960" height="164" rx="18" fill="url(#grid)"/>
 <path d="M30 1H930" stroke="#c4a4ff" stroke-opacity=".55"/>
-<text x="32" y="49" fill="#c4a4ff" font-family="monospace" font-size="18" letter-spacing="3">03 / DEVELOPER LAB</text>
-<text x="32" y="109" fill="#f0f2fc" font-family="'Segoe UI','Malgun Gothic',sans-serif" font-size="34" font-weight="700">직접 쓰고, 고치고, 나눕니다.</text>
+<text x="32" y="49" fill="#c4a4ff" font-family="'Segoe UI','Malgun Gothic',sans-serif" font-size="20" letter-spacing="2">03 / 작업 노트</text>
+<circle class="dot" cx="920" cy="42" r="5" fill="#c4a4ff"/>
+<text x="32" y="109" fill="#f0f2fc" font-family="'Segoe UI','Malgun Gothic',sans-serif" font-size="34" font-weight="700">직접 쓰고, 고치고, 다시 만들어 봅니다.</text>
 <path d="M32 137H928" stroke="#c4a4ff" stroke-opacity=".18"/>
 <path d="M32 137H108" stroke="#c4a4ff" stroke-width="3"/>
+<g clip-path="url(#rail)"><rect class="trail" x="32" y="135" width="140" height="4" fill="url(#trail)"/></g>
 </svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 116" role="img" aria-labelledby="title">
+<title id="title">아이디어 → 만들기 → 써 보고 고치기</title>
+<defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#d9deeb" stroke-opacity=".3"/></pattern>
+<radialGradient id="bloom"><stop stop-color="#7050a2" stop-opacity=".12"/><stop offset="1" stop-color="#7050a2" stop-opacity="0"/></radialGradient>
+<style>text{font-family:'Segoe UI','Malgun Gothic',sans-serif}
+ .pulse{animation:pulse 3.6s ease-in-out infinite}
+ .delay{animation-delay:1.2s}.later{animation-delay:2.4s}
+ .wire{animation:wire 4s linear infinite}
+ .spin{transform-box:fill-box;transform-origin:center;animation:spin 4s linear infinite}
+ .caret{animation:caret 1.4s steps(2,end) infinite}
+ .line-a{animation:code 6s ease-in-out infinite}.line-b{animation:code 6s 1s ease-in-out infinite}.line-c{animation:code 6s 2s ease-in-out infinite}
+ @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+ @keyframes wire{to{stroke-dashoffset:-80}}
+ @keyframes spin{to{transform:rotate(360deg)}}
+ @keyframes caret{50%{opacity:.15}}
+ @keyframes code{0%,100%{opacity:.35}30%,65%{opacity:1}}
+ @media(prefers-reduced-motion:reduce){*{animation:none!important}.particle,.glint{display:none}}
+</style></defs>
+<rect width="600" height="116" rx="20" fill="#f5f4fc"/>
+<rect width="600" height="116" rx="20" fill="url(#grid)"/>
+<ellipse cx="480" cy="23.200000000000003" rx="300" ry="116" fill="url(#bloom)"/>
+<path d="M84 38H546" fill="none" stroke="#d9deeb" stroke-width="2"/>
+  <path class="wire" d="M84 38H546" fill="none" stroke="#236d5e" stroke-opacity=".65" stroke-width="2" stroke-dasharray="8 32"/><rect x="68" y="22" width="32" height="32" rx="10" fill="#ffffff" stroke="#d9deeb"/>
+    <circle class="pulse " cx="84" cy="38" r="6" fill="#865b23"/><text x="84" y="89" font-size="26" fill="#21263b" text-anchor="middle">아이디어</text><rect x="264" y="22" width="32" height="32" rx="10" fill="#ffffff" stroke="#d9deeb"/>
+    <circle class="pulse delay" cx="280" cy="38" r="6" fill="#236d5e"/><text x="280" y="89" font-size="26" fill="#21263b" text-anchor="middle">만들기</text><rect x="452" y="22" width="32" height="32" rx="10" fill="#ffffff" stroke="#d9deeb"/>
+    <circle class="pulse later" cx="468" cy="38" r="6" fill="#7050a2"/><text x="468" y="89" font-size="26" fill="#21263b" text-anchor="middle">써 보고 고치기</text>
+</svg>

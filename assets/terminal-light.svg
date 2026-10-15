@@ -1,11 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 164" role="img" aria-labelledby="title">
-<title id="title">02 · MONGLE TERMINAL — 작업은 그대로. 어디서든, 이어서.</title>
-<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#236754" stroke-opacity=".065"/></pattern></defs>
+<title id="title">02 · Mongle Terminal — 흩어진 창은 모으고, 하던 일은 이어서.</title>
+<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#236754" stroke-opacity=".065"/></pattern>
+<linearGradient id="trail"><stop stop-color="#236754" stop-opacity="0"/><stop offset="1" stop-color="#236754"/></linearGradient>
+<clipPath id="rail"><rect x="32" y="134" width="896" height="6" rx="3"/></clipPath>
+<style>.trail{animation:travel 7s ease-in-out infinite}.dot{animation:breathe 3s ease-in-out infinite}@keyframes travel{0%{transform:translateX(-140px)}100%{transform:translateX(960px)}}@keyframes breathe{50%{opacity:.35}}@media(prefers-reduced-motion:reduce){*{animation:none!important}.trail{display:none}}</style></defs>
 <rect width="960" height="164" rx="18" fill="#f5f4fc"/>
 <rect width="960" height="164" rx="18" fill="url(#grid)"/>
 <path d="M30 1H930" stroke="#236754" stroke-opacity=".55"/>
-<text x="32" y="49" fill="#236754" font-family="monospace" font-size="18" letter-spacing="3">02 / MONGLE TERMINAL</text>
-<text x="32" y="109" fill="#171c32" font-family="'Segoe UI','Malgun Gothic',sans-serif" font-size="34" font-weight="700">작업은 그대로. 어디서든, 이어서.</text>
+<text x="32" y="49" fill="#236754" font-family="'Segoe UI','Malgun Gothic',sans-serif" font-size="20" letter-spacing="2">02 / Mongle Terminal</text>
+<circle class="dot" cx="920" cy="42" r="5" fill="#236754"/>
+<text x="32" y="109" fill="#171c32" font-family="'Segoe UI','Malgun Gothic',sans-serif" font-size="34" font-weight="700">흩어진 창은 모으고, 하던 일은 이어서.</text>
 <path d="M32 137H928" stroke="#236754" stroke-opacity=".18"/>
 <path d="M32 137H108" stroke="#236754" stroke-width="3"/>
+<g clip-path="url(#rail)"><rect class="trail" x="32" y="135" width="140" height="4" fill="url(#trail)"/></g>
 </svg>
