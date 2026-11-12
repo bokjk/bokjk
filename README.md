@@ -19,6 +19,7 @@ AI에게 코딩을 맡겼는데, 자꾸 터미널을 들여다보게 됩니다. 
 <p align="center">
   <a href="#몽글"><img src="assets/nav-mongle.svg" width="118" height="48" alt="몽글 소개로 이동" /></a>
   <a href="#몽글-터미널"><img src="assets/nav-terminal.svg" width="148" height="48" alt="몽글 터미널 소개로 이동" /></a>
+  <a href="#몽글-노크"><img src="assets/nav-knock.svg" width="128" height="48" alt="몽글 노크 소개로 이동" /></a>
   <a href="#개발-기록"><img src="assets/nav-lab.svg" width="128" height="48" alt="개발 기록으로 이동" /></a>
 </p>
 
@@ -176,6 +177,71 @@ AI의 답변을 읽었으면 코드도 봐야죠. **파일 탐색기는 선택�
 </p>
 
 Windows 11 x64 미리보기 · [소스 살펴보기](https://github.com/bokjk/mongle-terminal) · [버그·아이디어 보내기](https://github.com/bokjk/mongle-terminal/issues)
+
+<br />
+
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/knock-bridge-dark-mobile.svg" />
+  <source media="(max-width: 600px)" srcset="assets/knock-bridge-light-mobile.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/knock-bridge-dark.svg" />
+  <img src="assets/knock-bridge-light.svg" width="100%" alt="작업대도 넓혔으니, 이제 놓치지 않을 차례." />
+</picture>
+
+## 몽글 노크
+
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/knock-dark-mobile.svg" />
+  <source media="(max-width: 600px)" srcset="assets/knock-light-mobile.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/knock-dark.svg" />
+  <img src="assets/knock-light.svg" width="100%" alt="몽글 노크 — 놓친 대화는 남기고, 오래되면 똑똑." />
+</picture>
+
+몽글이 “다 했어요!” 하고 폴짝 뛰었는데, 하필 그때 회의 중이었습니다. 돌아와 보니 AI는 30분째 승인 버튼 하나를 기다리고 있었고요.
+
+**몽글 노크는 Codex·Claude Code에서 AI가 나를 기다리는 대화를, 처리할 때까지 화면 구석에 남겨 두는 Windows 알약입니다.** 승인 요청, 질문, 끝난 작업이 쌓이면 몇 건인지와 가장 오래 기다린 시간을 보여 주고, 누르면 그 대화나 그 터미널 창으로 데려다줍니다.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/mongle-knock-list-dark.png" />
+    <img src="assets/mongle-knock-list-light.png" width="356" alt="실제 몽글 노크 화면: 5건, 가장 오래 1시간 12분이라고 적힌 알약 아래로 기다리는 대화 다섯 줄이 펼쳐져 있습니다" />
+  </picture>
+  <br /><sub>실제 앱이 그린 화면입니다. 대화 제목은 지어낸 예시입니다.</sub>
+</p>
+
+### 말풍선은 지나가도, 알약은 남습니다.
+
+제 Codex 기록을 재 보니, 끝난 작업 넷 중 하나는 15분 넘게 그대로 있었습니다. 말풍선은 떴다가 사라지니까요. 그래서 노크는 **처리할 때까지 남습니다.** 답을 하거나, 승인하거나, 결과를 읽으면 저절로 내려갑니다.
+
+줄을 누르면 Codex 앱의 그 대화가 열리고, Claude Code라면 그 세션이 떠 있는 터미널 창이 앞으로 옵니다. “이거 어느 창이었더라?”도 같이 줄어듭니다.
+
+### 그렇다고 자꾸 부르지는 않습니다.
+
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/knock-flow-dark-mobile.svg" />
+  <source media="(max-width: 600px)" srcset="assets/knock-flow-light-mobile.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/knock-flow-dark.svg" />
+  <img src="assets/knock-flow-light.svg" width="100%" alt="알림 시점 설명용 그림: 끝난 지 4분 뒤에 알약에 올라오고, 15분이 지나면 Windows 알림으로 다시 알립니다." />
+</picture>
+
+절반은 몇 분 안에 직접 처리하니까, **조금 기다렸다가** 올립니다. 승인 요청은 1분, 질문과 완료는 4분. 그래도 15분 넘게 그대로면 Windows 알림으로 한 번 더 두드립니다. 그 뒤로도 15분마다, 많아야 네 번입니다.
+
+<details>
+<summary><b>가볍고, 조용하고, 읽기만 합니다.</b></summary>
+
+- **대상:** Codex 앱, Codex CLI, Claude Code, Claude 앱의 Code 탭. 일반 채팅은 다루지 않습니다.
+- **가벼움:** 브라우저 엔진 없이 Windows 창 하나에 직접 그립니다. 프로세스 하나, 메모리 30 MiB 안팎, 설치 파일 3.5 MB.
+- **하는 일:** 보고, 그 대화로 가는 것까지만 합니다. 대신 승인하거나 답을 입력하지 않습니다.
+- **개인정보:** 대화 본문은 저장하지 않고 제목·상태·시각만 씁니다. 자체 서버가 없으며, 네트워크는 업데이트 확인에만 사용합니다.
+- **업데이트:** 새 버전이 나오면 스스로 내려받아 설치합니다.
+
+</details>
+
+<p>
+  <a href="https://github.com/bokjk/mongle-knock-releases/releases/latest"><img src="assets/download-knock.svg" width="236" height="48" alt="몽글 노크 최신 Windows 설치 파일 다운로드" /></a>
+  <a href="https://github.com/bokjk/mongle-knock-releases#readme"><img src="assets/read-guide.svg" width="202" height="48" alt="몽글 노크 사용법 살펴보기" /></a>
+</p>
+
+Windows 11 첫 공개 · [변경 이력](https://github.com/bokjk/mongle-knock-releases/releases) · [버그·아이디어 보내기](https://github.com/bokjk/mongle-knock-releases/issues)
 
 <br />
 

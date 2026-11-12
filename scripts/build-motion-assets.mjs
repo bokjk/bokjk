@@ -1,11 +1,12 @@
 // Self-contained SVG illustrations: no script, remote fonts, trackers or external images.
 // Diagram values are illustrative. Product screenshots remain separate in README.md.
 import { writeFileSync } from 'node:fs';
+import { app, flow, motion, shadow } from './knock-art.mjs';
 const output = new URL('../assets/', import.meta.url);
 const font = "'Segoe UI','Malgun Gothic',sans-serif";
 const palettes = {
-  dark: { bg:'#101728', panel:'#19243a', fg:'#f2f1fa', muted:'#afb9ce', line:'#34435e', mint:'#7ddcc8', gold:'#f2bc76', lilac:'#c4a4ff', track:'#2b3a52' },
-  light: { bg:'#f5f4fc', panel:'#ffffff', fg:'#21263b', muted:'#59657a', line:'#d9deeb', mint:'#236d5e', gold:'#865b23', lilac:'#7050a2', track:'#e6e8f1' },
+  dark: { bg:'#101728', panel:'#19243a', fg:'#f2f1fa', muted:'#afb9ce', line:'#34435e', mint:'#7ddcc8', gold:'#f2bc76', lilac:'#c4a4ff', rose:'#f5a3a3', track:'#2b3a52' },
+  light: { bg:'#f5f4fc', panel:'#ffffff', fg:'#21263b', muted:'#59657a', line:'#d9deeb', mint:'#236d5e', gold:'#865b23', lilac:'#7050a2', rose:'#9b3f4b', track:'#e6e8f1' },
 };
 const txt = (x,y,s,size,color,extra='') => `<text x="${x}" y="${y}" font-size="${size}" fill="${color}" ${extra}>${s}</text>`;
 const common = `
@@ -79,10 +80,10 @@ function quota(p,m) {
   return svg(w,h,'Codex와 Claude의 5시간·주간 잔여 한도 예시. 실제 계정 수치가 아닙니다.',p,body,
     '@keyframes shimmer{0%,18%{transform:translateX(0)}65%,100%{transform:translateX(300px)}}.glint{animation:shimmer 8s ease-in-out infinite}');
 }
-function bridge(p,m) {
+function bridge(p,m,lines=['동료는 생겼고,','이제 작업대를 넓힐 차례.'],next='다음 작업실 →') {
   const w=m?600:960,h=m?200:158;
-  let body=txt(32,m?55:57,'동료는 생겼고,',m?30:29,p.muted);
-  body+=txt(32,m?103:106,'이제 작업대를 넓힐 차례.',m?32:38,p.fg,'font-weight="700"');
+  let body=txt(32,m?55:57,lines[0],m?30:29,p.muted);
+  body+=txt(32,m?103:106,lines[1],m?32:38,p.fg,'font-weight="700"');
   const x=m?32:718,y=m?150:57,len=m?536:210;
   body+=`<path d="M${x} ${y}h${len}" stroke="${p.line}" stroke-width="2"/>
   <path class="wire" d="M${x} ${y}h${len}" stroke="${p.mint}" stroke-width="3" stroke-dasharray="8 32"/>`;
@@ -90,9 +91,16 @@ function bridge(p,m) {
     const xx=x+i*len/2;
     body+=`<rect class="float-${i}" x="${xx-8}" y="${y-8}" width="16" height="16" rx="5" fill="${[p.gold,p.lilac,p.mint][i]}"/>`;
   }
-  if(!m)body+=txt(823,110,'다음 작업실 →',21,p.muted,'text-anchor="middle"');
-  return svg(w,h,'동료는 생겼고, 이제 작업대를 넓힐 차례.',p,body,
+  if(!m)body+=txt(823,110,next,21,p.muted,'text-anchor="middle"');
+  return svg(w,h,lines.join(' '),p,body,
     '@keyframes bob{50%{transform:translateY(-6px)}}.float-0,.float-1,.float-2{animation:bob 4s ease-in-out infinite}.float-1{animation-delay:.45s}.float-2{animation-delay:.9s}');
+}
+// 몽글 노크: 언제 알리는지. 알약과 알림은 앱의 실제 색으로 그린다.
+function knock(p,m,theme) {
+  const c=app[theme];
+  const made=flow({fg:p.fg,muted:p.muted,line:p.line,panel:p.panel,accent:p.rose},c,m);
+  return svg(made.w,made.h,'끝난 지 4분 뒤에 알약에 올라오고, 15분이 지나면 Windows 알림으로 다시 알립니다. 설명용 그림입니다.',p,
+    '<defs>'+shadow(c)+'</defs>'+made.body,motion);
 }
 function terminal(p,m) {
   const w=m?600:960,h=m?778:432;
@@ -131,7 +139,9 @@ function terminal(p,m) {
   return svg(w,h,'작업 PC에서 실행 중인 터미널을 Tailscale로 연결한 휴대폰에서 확인하고 입력하는 개념도',p,body);
 }
 for(const [theme,p] of Object.entries(palettes))for(const m of [false,true]){
-  for(const [name,build] of Object.entries({'workshop-signal':signal,'quota-story':quota,'workbench-bridge':bridge,'terminal-flow':terminal})){
+  const knockBridge=(p,m)=>bridge(p,m,['작업대도 넓혔으니,','이제 놓치지 않을 차례.']);
+  const knockFlow=(p,m)=>knock(p,m,theme);
+  for(const [name,build] of Object.entries({'workshop-signal':signal,'quota-story':quota,'workbench-bridge':bridge,'terminal-flow':terminal,'knock-bridge':knockBridge,'knock-flow':knockFlow})){
     writeFileSync(new URL(`${name}-${theme}${m?'-mobile':''}.svg`,output),build(p,m));
   }
 }

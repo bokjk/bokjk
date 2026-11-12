@@ -6,7 +6,8 @@ function save(name, body) { writeFileSync(new URL(name, out), body); }
 const sections = [
   ['mongle', '01', 'Mongle', ['작업 중엔 타닥타닥.', '끝나면 폴짝.'], '#f2bc76', '#715127'],
   ['terminal', '02', 'Mongle Terminal', ['흩어진 창은 모으고,', '하던 일은 이어서.'], '#7ddcc8', '#236754'],
-  ['lab', '03', '작업 노트', ['직접 쓰고, 고치고,', '다시 만들어 봅니다.'], '#c4a4ff', '#64469b'],
+  ['knock', '03', 'Mongle Knock', ['놓친 대화는 남기고,', '오래되면 똑똑.'], '#f5a3a3', '#9b3f4b'],
+  ['lab', '04', '작업 노트', ['직접 쓰고, 고치고,', '다시 만들어 봅니다.'], '#c4a4ff', '#64469b'],
 ];
 for (const [slug, n, label, lines, accent, lightAccent] of sections) {
   for (const theme of ['dark', 'light']) {
@@ -36,9 +37,11 @@ for (const [slug, n, label, lines, accent, lightAccent] of sections) {
 const buttons = [
  ['nav-mongle','몽글',118,'#243040','#f2bc76'],
  ['nav-terminal','몽글 터미널',148,'#243040','#7ddcc8'],
+ ['nav-knock','몽글 노크',128,'#243040','#f5a3a3'],
  ['nav-lab','개발 기록',128,'#243040','#c4a4ff'],
  ['download-mongle','몽글 다운로드',206,'#f2bc76','#15202d'],
  ['download-terminal','Windows 다운로드',226,'#7ddcc8','#15202d'],
+ ['download-knock','몽글 노크 다운로드',236,'#f5a3a3','#15202d'],
  ['read-guide','사용법 살펴보기',202,'#283348','#f2f4fc'],
 ];
 for(const [slug,label,w,bg,fg] of buttons) save(`${slug}.svg`, `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="48" viewBox="0 0 ${w} 48" role="img" aria-labelledby="t"><title id="t">${label}</title><rect x=".5" y=".5" width="${w-1}" height="47" rx="12" fill="${bg}"/><text x="${w/2}" y="30" text-anchor="middle" fill="${fg}" font-family="${font}" font-size="17" font-weight="650">${label}</text></svg>`);
